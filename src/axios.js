@@ -6,4 +6,5 @@ const instance = axiso.create({
 
 instance.defaults.headers.common['Authorization'] = 'Auth Token';
 
+
 export default instance;
