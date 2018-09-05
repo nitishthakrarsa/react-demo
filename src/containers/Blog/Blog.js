@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 
 import './Blog.css';
 import Posts from './Posts/Posts';
-// import axios from 'axios';
-import axios from '../../axios';
+import NewPost from './NewPost/NewPost';
+
+import { Route, Link } from 'react-router-dom';
 
 class Blog extends Component {
 
@@ -13,14 +14,17 @@ class Blog extends Component {
                 <header>
                     <nav>
                         <ul>
-                            <li>
-                                <a href="/">Home</a>
-                                <a href="/nwe-post">New Post</a>
-                            </li>
+                            <li><Link to="/">Home</Link> </li>
+                            <li><Link to={{
+                                pathname: '/new-post',
+                                hash: '#submit',
+                                search: '?query-submit=true'
+                            }}>New Post</Link></li>
                         </ul>
                     </nav>
                 </header>
-                <Posts />
+                <Route path="/" exact component={Posts} />
+                <Route path="/new-post" exact component={NewPost} />
             </div>
         );
     }

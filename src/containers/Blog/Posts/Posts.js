@@ -21,10 +21,10 @@ class Posts extends Component {
             this.setState({ posts: updatePosts });
             // console.log(response);
         })
-        .catch(error => {
-            console.log(error);
-            // this.setState({error: true});
-        });
+            .catch(error => {
+                console.log(error);
+                // this.setState({error: true});
+            });
 
     }
 
@@ -33,8 +33,8 @@ class Posts extends Component {
     }
 
     render() {
-        let posts = <p style={{textAlign:"center"}}>Somthing want wrong!!!!!</p>
-        if(!this.state.error) {
+        let posts = <p style={{ textAlign: "center" }}>Somthing want wrong!!!!!</p>
+        if (!this.state.error) {
             posts = this.state.posts.map(post => {
                 return <Post
                     key={post.id}
