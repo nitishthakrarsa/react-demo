@@ -5,7 +5,6 @@ import BuildControls from '../../components/Burger/BuildControls/BuildControls';
 
 
 import Modal from '../../components/UI/Modal/Modal';
-// import OrderSummary from '../../components/Burger/OrderSummary/OrderSummary';
 import OrderSummary from '../../components/Burger/OrderSummary/OrderSummary';
 import Spinners from '../../components/UI/Spinners/Spinners';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
@@ -26,11 +25,11 @@ class BurgerBuilder extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://react-my-app-burger-builder.firebaseio.com/ingredients.json')
-            .then(response => {
-                this.setState({ ingredients: response.data });
-            })
-            .catch(err => { this.setState({ error: true }) });
+        // axios.get('https://react-my-app-burger-builder.firebaseio.com/ingredients.json')
+        //     .then(response => {
+        //         this.setState({ ingredients: response.data });
+        //     })
+        //     .catch(err => { this.setState({ error: true }) });
     }
 
     updatePurchaseState(ingredients) {
